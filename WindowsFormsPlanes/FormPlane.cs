@@ -12,7 +12,7 @@ namespace WindowsFormsPlanes
 {
     public partial class FormPlane : Form
     {
-        private Istrebitel plane;
+        private ITransport plane;
         /// <summary>
         /// Конструктор
         /// </summary>
@@ -33,15 +33,27 @@ namespace WindowsFormsPlanes
         }
 
         /// <summary>
-        /// Обработка нажатия кнопки "Создать"
+        /// Обработка нажатия кнопки "Создать военный самолет"
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void buttonCreate_Click(object sender, EventArgs e)
+        private void buttonCreateWarPlane_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            plane = new Istrebitel();
-            plane.Init(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Green, Color.DarkGreen, true, true, true);
+            plane = new WarPlane(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.DarkGreen);
+            plane.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxPlanes.Width, pictureBoxPlanes.Height);
+            Draw();
+        }
+
+        /// <summary>
+        /// Обработка нажатия кнопки "Создать истребитель"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonCreateIstrebitel_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            plane = new Istrebitel(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Gray, Color.DarkGray, true, true, true);
             plane.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxPlanes.Width, pictureBoxPlanes.Height);
             Draw();
         }
