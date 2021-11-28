@@ -54,8 +54,11 @@
       <DependentUpon>FormPlane.cs</DependentUpon>
     </Compile>
     <Compile Include="Istrebitel.cs" />
+    <Compile Include="ITransport.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vehicle.cs" />
+    <Compile Include="WarPlane.cs" />
     <EmbeddedResource Include="FormPlane.resx">
       <DependentUpon>FormPlane.cs</DependentUpon>
     </EmbeddedResource>
